@@ -11,7 +11,7 @@ from rdflib import Graph
 
 MODEL_NAME = "qwen3-14b"
 
-TEST_SET_FILE = "dev-test-set/test_set_public.json"
+TEST_SET_FILE = "dev-test-set/dev_set.json"
 OUTPUT_FILE = "submission.json"
 
 SCHEMA_FILES = {
@@ -94,6 +94,24 @@ def extract_sparql(text: str) -> str:
     return text.strip()
 
 
+def ensure_prefixes(sparql: str) -> str:
+    prefixes = ""
+
+    if "ex:" in sparql and "PREFIX ex:" not in sparql:
+        prefixes += "PREFIX ex: <http://example.org/>\n"
+
+    if "schema:" in sparql and "PREFIX schema:" not in sparql:
+        prefixes += "PREFIX schema: <https://schema.org/>\n"
+
+    if "rdf:" in sparql and "PREFIX rdf:" not in sparql:
+        prefixes += "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
+
+    if "rdfs:" in sparql and "PREFIX rdfs:" not in sparql:
+        prefixes += "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
+
+    return prefixes + sparql
+
+
 def generate_sparql(question_obj: dict[str, Any]) -> str:
     schema_path = Path(detect_schema_file(question_obj))
     if not schema_path.exists():
@@ -115,18 +133,55 @@ You are an expert SPARQL generator.
 Generate exactly one valid SPARQL query for the given RDF graph.
 
 Rules:
-- Use ONLY the provided schema.
-- Do NOT invent classes or properties.
-- Use the listed prefixes exactly.
 - Return ONLY the final SPARQL query.
-- Do not include reasoning.
-- Do not include <think> tags.
-- Do not explain anything.
-- Do not use Markdown.
-- Prefer schema:name for human-readable names.
-- If sorting is useful, add ORDER BY.
-- If the question asks for a count, use COUNT.
+- Do not include reasoning, comments, Markdown, or <think> tags.
+- Use ONLY the provided schema.
+- Do NOT invent properties or classes.
+- Always include needed PREFIX declarations.
+- SELECT only the variables needed for the answer.
+- For questions asking "Welche Figuren", "Nenne alle", "Welche Rezepte", or similar, usually SELECT only ?name.
+- Do NOT SELECT helper variables like ?x, ?person, ?figure, ?team unless the question explicitly asks for URIs.
+- Use schema:name only to output readable names.
+- Use helper variables inside WHERE, but not in SELECT.
+- For named resources such as Avengers, Justice League, Batman, Italian, etc., prefer direct IRIs like ex:Avengers when likely available.
+- Never write <ex:Something>. Correct form is ex:Something.
+- If filtering by a named entity, prefer direct IRI patterns like:
+  ?x ex:memberOf ex:Avengers .
+- Do not use invalid patterns like:
+  ?x ex:memberOf <ex:Team> .
+- If sorting a list of names, use ORDER BY ?name.
+- If the question asks for a count, SELECT only the count variable, e.g. (COUNT(?x) AS ?count).
 - If the question asks yes/no, use ASK.
+
+Example 1:
+Question:
+Welche Figuren sind Superheld:innen?
+
+SPARQL:
+PREFIX ex: <http://example.org/>
+PREFIX schema: <https://schema.org/>
+
+SELECT ?name
+WHERE {{
+  ?x a ex:Superhero ;
+     schema:name ?name .
+}}
+ORDER BY ?name
+
+Example 2:
+Question:
+Welche Figuren gehoeren zu den Avengers?
+
+SPARQL:
+PREFIX ex: <http://example.org/>
+PREFIX schema: <https://schema.org/>
+
+SELECT ?name
+WHERE {{
+  ?x ex:memberOf ex:Avengers ;
+     schema:name ?name .
+}}
+ORDER BY ?name
 
 Schema:
 {schema_text}
@@ -136,7 +191,9 @@ Question:
 """.strip()
 
     response = get_model().respond(prompt)
-    return extract_sparql(str(response))
+    sparql = extract_sparql(str(response))
+    sparql = ensure_prefixes(sparql)
+    return sparql
 
 
 def load_graph(graph_name: str) -> Graph:
