@@ -58,19 +58,38 @@ def detect_schema_file(question_obj: dict[str, Any]) -> str:
 
 
 def extract_sparql(text: str) -> str:
+    # Qwen/Reasoning-Spuren entfernen
+    text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL | re.IGNORECASE)
+    text = re.sub(r".*</think>", "", text, flags=re.DOTALL | re.IGNORECASE)
+
+    # Markdown-Codeblock extrahieren
     match = re.search(r"```(?:sparql)?\s*(.*?)```", text, re.DOTALL | re.IGNORECASE)
     if match:
         text = match.group(1)
 
-    start_candidates = [
-        text.find("PREFIX"),
-        text.find("SELECT"),
-        text.find("ASK"),
-        text.find("CONSTRUCT"),
+    # Alle Query-Kandidaten suchen
+    pattern = r"((?:PREFIX\s+\w+:\s*<[^>]+>\s*)*(?:SELECT|ASK|CONSTRUCT|DESCRIBE)\s+.*)"
+    matches = re.findall(pattern, text, flags=re.DOTALL | re.IGNORECASE)
+
+    if matches:
+        text = matches[-1]  # letzte Query nehmen, weil davor oft Denktext steht
+
+    # Nach typischen Erklärungsstarts abschneiden
+    stop_markers = [
+        "\n\nBut ",
+        "\n\nHowever",
+        "\n\nThe ",
+        "\n\nThis ",
+        "\n\nI ",
+        "\n\nMake sure",
+        "\n\nAlternatively",
+        "\n\nORDER BY might",
     ]
-    starts = [x for x in start_candidates if x != -1]
-    if starts:
-        text = text[min(starts):]
+
+    for marker in stop_markers:
+        idx = text.find(marker)
+        if idx != -1:
+            text = text[:idx]
 
     return text.strip()
 
@@ -99,7 +118,9 @@ Rules:
 - Use ONLY the provided schema.
 - Do NOT invent classes or properties.
 - Use the listed prefixes exactly.
-- Return ONLY the SPARQL query.
+- Return ONLY the final SPARQL query.
+- Do not include reasoning.
+- Do not include <think> tags.
 - Do not explain anything.
 - Do not use Markdown.
 - Prefer schema:name for human-readable names.
