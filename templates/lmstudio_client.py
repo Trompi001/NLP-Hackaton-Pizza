@@ -6,7 +6,7 @@ def main():
     lms.configure_default_client("127.0.0.1:1234")
 
     # Get model reference (uses already loaded model if available)
-    model = lms.llm("openai/gpt-oss-120b")
+    model = lms.llm("deepseek-r1-distill-qwen-7b")
 
     # Hard-coded prompt
     prompt = "short hello world. answer just in one sentence."

@@ -1,0 +1,43 @@
+SCHEMA SUMMARY
+
+Classes:
+- ex:Antihero
+- ex:Artifact
+- ex:City
+- ex:Civilian
+- ex:Nation
+- ex:Organization
+- ex:Power
+- ex:Publisher
+- ex:Species
+- ex:Superhero
+- ex:Team
+- ex:Villain
+- rdf:Property
+- rdfs:Class
+- schema:Person
+
+Properties:
+- ex:affiliatedWith: ex:Antihero, ex:Civilian, ex:Superhero, ex:Villain, schema:Person -> ex:Organization, ex:Team
+- ex:alias: ex:Antihero, ex:Civilian, ex:Superhero, ex:Villain, schema:Person -> Literal
+- ex:alignment: ex:Antihero, ex:Civilian, ex:Superhero, ex:Villain, schema:Person -> Literal
+- ex:allyOf: ex:Superhero, schema:Person -> ex:Superhero, schema:Person
+- ex:enemyOf: ex:Superhero, ex:Villain, schema:Person -> ex:Superhero, ex:Villain, schema:Person
+- ex:firstAppearanceYear: ex:Antihero, ex:Civilian, ex:Superhero, ex:Villain, schema:Person -> Literal
+- ex:hasPower: ex:Antihero, ex:Civilian, ex:Superhero, ex:Villain, schema:Person -> ex:Artifact, ex:Power
+- ex:memberOf: ex:Antihero, ex:Civilian, ex:Superhero, ex:Villain, schema:Person -> ex:Team
+- ex:operatesIn: ex:Antihero, ex:Civilian, ex:Superhero, ex:Villain, schema:Person -> ex:City, ex:Nation
+- ex:originWorld: ex:Antihero, ex:Civilian, ex:Superhero, ex:Villain, schema:Person -> ex:City, ex:Nation
+- ex:publishedBy: ex:Antihero, ex:Civilian, ex:Superhero, ex:Villain, schema:Person -> ex:Publisher
+- ex:realName: ex:Antihero, ex:Civilian, ex:Superhero, ex:Villain, schema:Person -> Literal
+- ex:roleLabel: ex:Antihero, ex:Civilian, ex:Superhero, ex:Villain, schema:Person -> Literal
+- ex:species: ex:Antihero, ex:Civilian, ex:Superhero, ex:Villain, schema:Person -> ex:Species
+- ex:usesArtifact: ex:Antihero, ex:Civilian, ex:Superhero, ex:Villain, schema:Person -> ex:Artifact, ex:Power
+- rdfs:comment: rdf:Property, rdfs:Class -> Literal
+- rdfs:label: rdf:Property, rdfs:Class -> Literal
+- schema:name: ex:Antihero, ex:Artifact, ex:City, ex:Civilian, ex:Nation, ex:Organization, ex:Power, ex:Publisher, ex:Species, ex:Superhero, ex:Team, ex:Villain, schema:Person -> Literal
+
+Instructions for LLM:
+Use ONLY the provided schema.
+Do NOT invent properties or classes.
+Use schema:name for readable labels when available.

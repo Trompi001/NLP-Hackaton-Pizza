@@ -1,21 +1,22 @@
 from rdflib import Graph
 
 g = Graph()
-g.parse("05-hackathon/knowledge-graphs/recipes_100.ttl", format="turtle")
+g.parse("hackathon-20260507/knowledge-graphs/superhero_universe.ttl", format="turtle")
 
 query = """
 PREFIX ex: <http://example.org/>
 PREFIX schema: <https://schema.org/>
 
-SELECT ?name ?time
+SELECT ?name ?teamName
 WHERE {
-  ?r a schema:Recipe ;
+  ?r a schema:Person ;
      schema:name ?name ;
-     ex:totalTimeMinutes ?time .
-  FILTER(?time <= 30)
+     ex:memberOf ?team .
+
+  ?team schema:name ?teamName .
 }
-ORDER BY ?time ?name
+ORDER BY ?teamName
 """
 
 for row in g.query(query):
-    print(row.name)
+    print(row.name, row.teamName)

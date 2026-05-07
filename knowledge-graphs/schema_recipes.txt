@@ -1,0 +1,36 @@
+SCHEMA SUMMARY
+
+Classes:
+- ex:Cuisine
+- ex:DietType
+- ex:Ingredient
+- ex:MealType
+- ex:RecipeCategory
+- ex:SkillLevel
+- rdf:Property
+- rdfs:Class
+- schema:Recipe
+
+Properties:
+- ex:calories: schema:Recipe -> Literal
+- ex:cookTimeMinutes: schema:Recipe -> Literal
+- ex:countryOfOrigin: schema:Recipe -> Literal
+- ex:cuisineType: schema:Recipe -> ex:Cuisine
+- ex:diet: schema:Recipe -> ex:DietType
+- ex:difficulty: schema:Recipe -> ex:SkillLevel
+- ex:hasIngredient: schema:Recipe -> ex:Ingredient, ex:RecipeCategory
+- ex:mainProtein: schema:Recipe -> Literal
+- ex:mealType: schema:Recipe -> ex:MealType
+- ex:prepTimeMinutes: schema:Recipe -> Literal
+- ex:recipeCategory: schema:Recipe -> ex:Ingredient, ex:MealType, ex:RecipeCategory
+- ex:servings: schema:Recipe -> Literal
+- ex:spiceLevel: schema:Recipe -> Literal
+- ex:totalTimeMinutes: schema:Recipe -> Literal
+- rdfs:comment: rdf:Property, rdfs:Class -> Literal
+- rdfs:label: rdf:Property, rdfs:Class -> Literal
+- schema:name: ex:Cuisine, ex:DietType, ex:Ingredient, ex:MealType, ex:RecipeCategory, ex:SkillLevel, schema:Recipe -> Literal
+
+Instructions for LLM:
+Use ONLY the provided schema.
+Do NOT invent properties or classes.
+Use schema:name for readable labels when available.

@@ -1,0 +1,303 @@
+[
+  {
+    "id": "test_super_01",
+    "graph": "superhero_universe",
+    "difficulty": "easy",
+    "question_de": "Nenne alle Antiheld:innen.",
+    "generated_sparql": "PREFIX ex: <http://example.org/>\nPREFIX schema: <https://schema.org/>\n\nSELECT ?name\nWHERE {\n  ?x a ex:Antihero ;\n     schema:name ?name .\n}\nORDER BY ?name",
+    "execution_success": true,
+    "predicted_result": [
+      {
+        "name": "Blade"
+      },
+      {
+        "name": "Catwoman"
+      },
+      {
+        "name": "Deadpool"
+      },
+      {
+        "name": "Ghost Rider"
+      },
+      {
+        "name": "Harley Quinn"
+      },
+      {
+        "name": "John Constantine"
+      },
+      {
+        "name": "Moon Knight"
+      },
+      {
+        "name": "Punisher"
+      },
+      {
+        "name": "Venom"
+      },
+      {
+        "name": "Winter Soldier"
+      }
+    ]
+  },
+  {
+    "id": "test_super_02",
+    "graph": "superhero_universe",
+    "difficulty": "easy",
+    "question_de": "Welche Figuren gehoeren zur Justice League?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_super_03",
+    "graph": "superhero_universe",
+    "difficulty": "easy",
+    "question_de": "Welche Figuren stammen aus Marvel?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_super_04",
+    "graph": "superhero_universe",
+    "difficulty": "medium",
+    "question_de": "Welche Figuren haben Super Strength?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_super_05",
+    "graph": "superhero_universe",
+    "difficulty": "medium",
+    "question_de": "Welche Figuren nutzen ein Artefakt?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_super_06",
+    "graph": "superhero_universe",
+    "difficulty": "medium",
+    "question_de": "Welche Figuren sind in New York City aktiv?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_super_07",
+    "graph": "superhero_universe",
+    "difficulty": "medium",
+    "question_de": "Welche Figuren sind Kryptonian?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_super_08",
+    "graph": "superhero_universe",
+    "difficulty": "medium",
+    "question_de": "Welche Figuren gehoeren zu den X-Men und sind Mutant:innen?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_super_09",
+    "graph": "superhero_universe",
+    "difficulty": "medium",
+    "question_de": "Welche Figuren koennen fliegen und stammen von Marvel?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_super_10",
+    "graph": "superhero_universe",
+    "difficulty": "hard",
+    "question_de": "Wie viele Figuren gibt es pro Rolle?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_super_11",
+    "graph": "superhero_universe",
+    "difficulty": "hard",
+    "question_de": "Welche Figuren haben mindestens drei Powers?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_super_12",
+    "graph": "superhero_universe",
+    "difficulty": "hard",
+    "question_de": "Welche Verbuendeten hat Batman?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_super_13",
+    "graph": "superhero_universe",
+    "difficulty": "hard",
+    "question_de": "Welche Gegner:innen hat Spider-Man?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_super_14",
+    "graph": "superhero_universe",
+    "difficulty": "hard",
+    "question_de": "Welche Publisher haben mehr als zehn Figuren?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_super_15",
+    "graph": "superhero_universe",
+    "difficulty": "hard",
+    "question_de": "Welche Figuren traten ab 1980 erstmals auf?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_recipe_01",
+    "graph": "recipes_100",
+    "difficulty": "easy",
+    "question_de": "Nenne alle vegetarischen Rezepte.",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_recipe_02",
+    "graph": "recipes_100",
+    "difficulty": "easy",
+    "question_de": "Welche Rezepte sind Dinner?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_recipe_03",
+    "graph": "recipes_100",
+    "difficulty": "easy",
+    "question_de": "Welche Rezepte enthalten Chickpeas?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_recipe_04",
+    "graph": "recipes_100",
+    "difficulty": "medium",
+    "question_de": "Welche japanischen Rezepte gibt es?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_recipe_05",
+    "graph": "recipes_100",
+    "difficulty": "medium",
+    "question_de": "Welche Rezepte haben weniger als 500 Kalorien?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_recipe_06",
+    "graph": "recipes_100",
+    "difficulty": "medium",
+    "question_de": "Welche Rezepte haben Tofu und sind vegan?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_recipe_07",
+    "graph": "recipes_100",
+    "difficulty": "medium",
+    "question_de": "Welche Rezepte sind Breakfast und Easy?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_recipe_08",
+    "graph": "recipes_100",
+    "difficulty": "medium",
+    "question_de": "Welche Rezepte dauern zwischen 20 und 35 Minuten insgesamt?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_recipe_09",
+    "graph": "recipes_100",
+    "difficulty": "medium",
+    "question_de": "Welche Rezepte haben Spice Level genau 0?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_recipe_10",
+    "graph": "recipes_100",
+    "difficulty": "hard",
+    "question_de": "Wie viele Rezepte gibt es pro Cuisine?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_recipe_11",
+    "graph": "recipes_100",
+    "difficulty": "hard",
+    "question_de": "Welche Cuisines haben im Durchschnitt mehr als 550 Kalorien?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_recipe_12",
+    "graph": "recipes_100",
+    "difficulty": "hard",
+    "question_de": "Welche Rezepte haben mindestens sieben Zutaten?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_recipe_13",
+    "graph": "recipes_100",
+    "difficulty": "hard",
+    "question_de": "Welche Diet-Typen kommen vor und wie viele Rezepte gibt es je Typ?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_recipe_14",
+    "graph": "recipes_100",
+    "difficulty": "hard",
+    "question_de": "Welche Rezepte enthalten sowohl Rice als auch Soy Sauce?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  },
+  {
+    "id": "test_recipe_15",
+    "graph": "recipes_100",
+    "difficulty": "hard",
+    "question_de": "Welche Rezepte haben mehr als 3 Portionen?",
+    "generated_sparql": "",
+    "execution_success": false,
+    "predicted_result": []
+  }
+]

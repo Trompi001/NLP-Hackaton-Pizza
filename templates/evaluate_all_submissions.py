@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Any
 
 
-GOLD_FILE = "dev-test-set/test_set.json"
+GOLD_FILE = "dev-test-set/dev_set.json"
 SUBMISSIONS_DIR = "submissions"
 REPORTS_DIR = "reports"
 LEADERBOARD_JSON = "leaderboard.json"

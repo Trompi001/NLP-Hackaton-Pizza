@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Text-to-SPARQL Leaderboard</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 24px; color: #222; }
+h1, h2, h3, h4 { margin-bottom: 0.3rem; }
+p { line-height: 1.45; }
+.card { border: 1px solid #ddd; border-radius: 10px; padding: 16px; margin: 20px 0; }
+.summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 12px 0 16px 0; }
+.summary-grid div { background: #f6f6f6; border-radius: 8px; padding: 10px; }
+.summary-grid span { display: block; font-size: 12px; color: #555; margin-bottom: 4px; }
+table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+th, td { border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left; }
+th { background: #f2f2f2; position: sticky; top: 0; }
+pre { white-space: pre-wrap; word-break: break-word; background: #fafafa; border: 1px solid #eee; padding: 10px; border-radius: 6px; max-height: 260px; overflow: auto; }
+.muted { color: #666; }
+.details-row td { background: #fcfcfc; }
+.badge { display: inline-block; background: #eef6ff; border: 1px solid #cfe3ff; padding: 4px 8px; border-radius: 999px; margin-right: 8px; }
+.hidden { display: none; }
+.details-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+button { border: 1px solid #bbb; background: #fff; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+button:hover { background: #f5f5f5; }
+ul { margin-top: 8px; }
+</style>
+<script>
+function toggleDetails(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.toggle('hidden');
+}
+</script>
+</head>
+<body>
+<h1>Text-to-SPARQL Leaderboard</h1>
+<p class="muted">Automatisch erzeugte Auswertung aller Submissions gegen den Hidden Goldstandard.</p>
+
+<section class="card">
+<h2>Gewinner</h2>
+<p>Es gibt 1 Gewinner-Team(s) nach der definierten Ranking-Logik.</p>
+<ul><li><strong>submission.json</strong> — Macro F1 0.0000, Execution Rate 0.0000, F1 Hard 0.0000</li></ul>
+</section>
+
+<section class="card">
+<h2>Leaderboard</h2>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Submission</th>
+<th>Macro F1</th>
+<th>Exec Rate</th>
+<th>EM Rate</th>
+<th>Macro P</th>
+<th>Macro R</th>
+<th>F1 Superhero</th>
+<th>F1 Recipes</th>
+<th>F1 Hard</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>submission.json</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td></tr>
+</tbody>
+</table>
+</section>
+
+<h2>Deep Dive pro Submission</h2>
+<section class='card'><h2>submission.json</h2><div class='summary-grid'><div><span>Macro F1</span><strong>0.0000</strong></div><div><span>Execution Rate</span><strong>0.0000</strong></div><div><span>Exact Match Rate</span><strong>0.0000</strong></div><div><span>Macro Precision</span><strong>0.0000</strong></div><div><span>Macro Recall</span><strong>0.0000</strong></div><div><span>F1 Hard</span><strong>0.0000</strong></div></div><p><strong>F1 by Graph:</strong> superhero_universe=0.0000, recipes_100=0.0000</p><p><strong>F1 by Difficulty:</strong> easy=0.0000, medium=0.0000, hard=0.0000</p><table><thead><tr><th>ID</th><th>Graph</th><th>Difficulty</th><th>Exec</th><th>P</th><th>R</th><th>F1</th><th>EM</th><th>Gold</th><th>Pred</th><th>Deep Dive</th></tr></thead><tbody><tr><td>dev_super_01</td><td>superhero_universe</td><td>easy</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>61</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_super_01')">Details</button></td></tr><tr id='submission_json_dev_super_01' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Welche Figuren sind Superheld:innen?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[
+  {
+    &quot;name&quot;: &quot;Ant-Man&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Aquaman&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Batgirl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Batman&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Beast Boy&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Black Canary&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Black Panther&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Black Widow&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Blue Beetle&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Booster Gold&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Captain America&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Captain Marvel&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Cyborg&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Cyclops&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Daredevil&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Doctor Fate&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Doctor Strange&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Drax&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Flash&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Gambit&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Gamora&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Arrow&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Lantern&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Groot&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Hawkeye&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Hulk&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Human Torch&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Huntress&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Invisible Woman&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Iron Fist&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Iron Man&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Jean Grey&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Jessica Jones&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Luke Cage&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Magik&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Martian Manhunter&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Mr. Fantastic&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Ms. Marvel&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Nightwing&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Professor X&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Raven&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Rocket Raccoon&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Rogue&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Scarlet Witch&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Shazam&quot;
+  },
+  {
+    &quot;name&quot;: &quot;She-Hulk&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Silver Surfer&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spider-Man&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Star-Lord&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Starfire&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Static&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Storm&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Supergirl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Superman&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Thing&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Thor&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Vision&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Wasp&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Wolverine&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Wonder Woman&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Zatanna&quot;
+  }
+]</pre></div></div></td></tr><tr><td>dev_super_02</td><td>superhero_universe</td><td>easy</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>17</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_super_02')">Details</button></td></tr><tr id='submission_json_dev_super_02' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Welche Figuren gehoeren zu den Avengers?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[
+  {
+    &quot;name&quot;: &quot;Ant-Man&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Black Panther&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Black Widow&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Captain America&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Captain Marvel&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Hawkeye&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Hulk&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Iron Man&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Ms. Marvel&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Nick Fury&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Pepper Potts&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Scarlet Witch&quot;
+  },
+  {
+    &quot;name&quot;: &quot;She-Hulk&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spider-Man&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Thor&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Vision&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Wasp&quot;
+  }
+]</pre></div></div></td></tr><tr><td>dev_super_03</td><td>superhero_universe</td><td>easy</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>50</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_super_03')">Details</button></td></tr><tr id='submission_json_dev_super_03' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Welche Figuren stammen von DC Comics?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[
+  {
+    &quot;name&quot;: &quot;Alfred Pennyworth&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Aquaman&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Bane&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Batgirl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Batman&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Beast Boy&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Black Adam&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Black Canary&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Black Manta&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Blue Beetle&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Booster Gold&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Brainiac&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Captain Cold&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Catwoman&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Cheetah&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Commissioner Gordon&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Cyborg&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Darkseid&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Deathstroke&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Doctor Fate&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Doctor Poison&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Flash&quot;
+  },
+  {
+    &quot;name&quot;: &quot;General Zod&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Arrow&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Lantern&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Harley Quinn&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Huntress&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Jimmy Olsen&quot;
+  },
+  {
+    &quot;name&quot;: &quot;John Constantine&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Joker&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Lex Luthor&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Lois Lane&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Martian Manhunter&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Nightwing&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Oracle&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Poison Ivy&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Ra&#x27;s al Ghul&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Raven&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Reverse Flash&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Riddler&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Scarecrow&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Shazam&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Sinestro&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Starfire&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Static&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Supergirl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Superman&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Two-Face&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Wonder Woman&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Zatanna&quot;
+  }
+]</pre></div></div></td></tr><tr><td>dev_super_04</td><td>superhero_universe</td><td>medium</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>22</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_super_04')">Details</button></td></tr><tr id='submission_json_dev_super_04' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Welche Figuren haben die Power Flight?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[
+  {
+    &quot;name&quot;: &quot;Black Adam&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Booster Gold&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Captain Marvel&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Doctor Fate&quot;
+  },
+  {
+    &quot;name&quot;: &quot;General Zod&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Lantern&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Human Torch&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Magneto&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Martian Manhunter&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Rogue&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Shazam&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Silver Surfer&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Sinestro&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Starfire&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Storm&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Supergirl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Superman&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Thor&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Vision&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Vulture&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Wasp&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Wonder Woman&quot;
+  }
+]</pre></div></div></td></tr><tr><td>dev_super_05</td><td>superhero_universe</td><td>medium</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>18</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_super_05')">Details</button></td></tr><tr id='submission_json_dev_super_05' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Welche Figuren operieren in Gotham City?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[
+  {
+    &quot;name&quot;: &quot;Alfred Pennyworth&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Bane&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Batgirl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Batman&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Catwoman&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Commissioner Gordon&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Harley Quinn&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Huntress&quot;
+  },
+  {
+    &quot;name&quot;: &quot;John Constantine&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Joker&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Oracle&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Poison Ivy&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Ra&#x27;s al Ghul&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Raven&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Riddler&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Scarecrow&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Two-Face&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Zatanna&quot;
+  }
+]</pre></div></div></td></tr><tr><td>dev_super_06</td><td>superhero_universe</td><td>medium</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>13</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_super_06')">Details</button></td></tr><tr id='submission_json_dev_super_06' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Welche Figuren sind Mutant:innen?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[
+  {
+    &quot;name&quot;: &quot;Apocalypse&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Cyclops&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Gambit&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Jean Grey&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Magik&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Magneto&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Mystique&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Professor X&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Rogue&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Sabretooth&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Scarlet Witch&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Storm&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Wolverine&quot;
+  }
+]</pre></div></div></td></tr><tr><td>dev_super_07</td><td>superhero_universe</td><td>medium</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>1</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_super_07')">Details</button></td></tr><tr id='submission_json_dev_super_07' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Welche Gegner:innen hat Batman?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[
+  {
+    &quot;enemyName&quot;: &quot;Joker&quot;
+  }
+]</pre></div></div></td></tr><tr><td>dev_super_08</td><td>superhero_universe</td><td>hard</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>77</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_super_08')">Details</button></td></tr><tr id='submission_json_dev_super_08' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Welche Figuren haben mindestens zwei Powers?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[
+  {
+    &quot;name&quot;: &quot;Apocalypse&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Aquaman&quot;,
+    &quot;powerCount&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Batgirl&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Batman&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Black Adam&quot;,
+    &quot;powerCount&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Black Canary&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Black Panther&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Blade&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Blue Beetle&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Booster Gold&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Brainiac&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Captain America&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Captain Marvel&quot;,
+    &quot;powerCount&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Carnage&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Cheetah&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Cyborg&quot;,
+    &quot;powerCount&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Daredevil&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Darkseid&quot;,
+    &quot;powerCount&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Deadpool&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Deathstroke&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Doctor Doom&quot;,
+    &quot;powerCount&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Doctor Fate&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Doctor Octopus&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Doctor Strange&quot;,
+    &quot;powerCount&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Drax&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Flash&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Gambit&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Gamora&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;General Zod&quot;,
+    &quot;powerCount&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Ghost Rider&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Green Goblin&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Green Lantern&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Groot&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Hela&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Hulk&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Human Torch&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Invisible Woman&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Iron Fist&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Iron Man&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Jean Grey&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Killmonger&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Kingpin&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Kraven the Hunter&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Lex Luthor&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Loki&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Luke Cage&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Magik&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Magneto&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Martian Manhunter&quot;,
+    &quot;powerCount&quot;: 4
+  },
+  {
+    &quot;name&quot;: &quot;Mr. Fantastic&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Ms. Marvel&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Raven&quot;,
+    &quot;powerCount&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Reverse Flash&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Rocket Raccoon&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Rogue&quot;,
+    &quot;powerCount&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Sabretooth&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Scarlet Witch&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Shazam&quot;,
+    &quot;powerCount&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;She-Hulk&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Silver Surfer&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Sinestro&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Spider-Man&quot;,
+    &quot;powerCount&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Starfire&quot;,
+    &quot;powerCount&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Storm&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Supergirl&quot;,
+    &quot;powerCount&quot;: 4
+  },
+  {
+    &quot;name&quot;: &quot;Superman&quot;,
+    &quot;powerCount&quot;: 4
+  },
+  {
+    &quot;name&quot;: &quot;Thanos&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Thing&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Thor&quot;,
+    &quot;powerCount&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Ultron&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Venom&quot;,
+    &quot;powerCount&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Vision&quot;,
+    &quot;powerCount&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Wasp&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Winter Soldier&quot;,
+    &quot;powerCount&quot;: 2
+  },
+  {
+    &quot;name&quot;: &quot;Wolverine&quot;,
+    &quot;powerCount&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Wonder Woman&quot;,
+    &quot;powerCount&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Zatanna&quot;,
+    &quot;powerCount&quot;: 2
+  }
+]</pre></div></div></td></tr><tr><td>dev_super_09</td><td>superhero_universe</td><td>hard</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>2</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_super_09')">Details</button></td></tr><tr id='submission_json_dev_super_09' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Wie viele Figuren gibt es pro Publisher?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[
+  {
+    &quot;publisherName&quot;: &quot;DC Comics&quot;,
+    &quot;count&quot;: 50
+  },
+  {
+    &quot;publisherName&quot;: &quot;Marvel&quot;,
+    &quot;count&quot;: 71
+  }
+]</pre></div></div></td></tr><tr><td>dev_super_10</td><td>superhero_universe</td><td>hard</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>0</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_super_10')">Details</button></td></tr><tr id='submission_json_dev_super_10' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Welche Figuren hatten ihren ersten Auftritt vor 1970?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[]</pre></div></div></td></tr><tr><td>dev_recipe_01</td><td>recipes_100</td><td>easy</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>35</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_recipe_01')">Details</button></td></tr><tr id='submission_json_dev_recipe_01' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Welche Rezepte sind vegan?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[
+  {
+    &quot;name&quot;: &quot;Classic Chickpea Curry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Classic Falafel Wrap&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Classic Lentil Stew&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Classic Moroccan Couscous&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Classic Roesti Bowl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Classic Thai Peanut Noodles&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Classic Tofu Udon Stir Fry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Chickpea Curry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Falafel Wrap&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Lentil Stew&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Moroccan Couscous&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Roesti Bowl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Thai Peanut Noodles&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Tofu Udon Stir Fry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Chickpea Curry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Falafel Wrap&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Lentil Stew&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Moroccan Couscous&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Roesti Bowl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Thai Peanut Noodles&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Tofu Udon Stir Fry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Chickpea Curry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Falafel Wrap&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Lentil Stew&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Moroccan Couscous&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Roesti Bowl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Thai Peanut Noodles&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Tofu Udon Stir Fry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Chickpea Curry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Falafel Wrap&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Lentil Stew&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Moroccan Couscous&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Roesti Bowl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Thai Peanut Noodles&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Tofu Udon Stir Fry&quot;
+  }
+]</pre></div></div></td></tr><tr><td>dev_recipe_02</td><td>recipes_100</td><td>easy</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>5</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_recipe_02')">Details</button></td></tr><tr id='submission_json_dev_recipe_02' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Welche Rezepte enthalten Tofu?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[
+  {
+    &quot;name&quot;: &quot;Classic Tofu Udon Stir Fry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Tofu Udon Stir Fry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Tofu Udon Stir Fry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Tofu Udon Stir Fry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Tofu Udon Stir Fry&quot;
+  }
+]</pre></div></div></td></tr><tr><td>dev_recipe_03</td><td>recipes_100</td><td>easy</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>10</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_recipe_03')">Details</button></td></tr><tr id='submission_json_dev_recipe_03' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Welche Rezepte sind Fruehstueck?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[
+  {
+    &quot;name&quot;: &quot;Classic Berry Pancakes&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Classic Breakfast Oat Bowl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Berry Pancakes&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Breakfast Oat Bowl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Berry Pancakes&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Breakfast Oat Bowl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Berry Pancakes&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Breakfast Oat Bowl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Berry Pancakes&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Breakfast Oat Bowl&quot;
+  }
+]</pre></div></div></td></tr><tr><td>dev_recipe_04</td><td>recipes_100</td><td>medium</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>5</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_recipe_04')">Details</button></td></tr><tr id='submission_json_dev_recipe_04' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Welche italienischen Rezepte gibt es?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[
+  {
+    &quot;name&quot;: &quot;Classic Pomodoro Pasta&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Pomodoro Pasta&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Pomodoro Pasta&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Pomodoro Pasta&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Pomodoro Pasta&quot;
+  }
+]</pre></div></div></td></tr><tr><td>dev_recipe_05</td><td>recipes_100</td><td>medium</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>46</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_recipe_05')">Details</button></td></tr><tr id='submission_json_dev_recipe_05' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Welche Rezepte haben maximal 30 Minuten Gesamtzeit?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[
+  {
+    &quot;name&quot;: &quot;Classic Bean Tacos&quot;,
+    &quot;time&quot;: 25
+  },
+  {
+    &quot;name&quot;: &quot;Classic Berry Pancakes&quot;,
+    &quot;time&quot;: 25
+  },
+  {
+    &quot;name&quot;: &quot;Classic Breakfast Oat Bowl&quot;,
+    &quot;time&quot;: 15
+  },
+  {
+    &quot;name&quot;: &quot;Classic Chicken Stir Fry&quot;,
+    &quot;time&quot;: 30
+  },
+  {
+    &quot;name&quot;: &quot;Classic Greek Salad Plate&quot;,
+    &quot;time&quot;: 15
+  },
+  {
+    &quot;name&quot;: &quot;Classic Halloumi Burger&quot;,
+    &quot;time&quot;: 20
+  },
+  {
+    &quot;name&quot;: &quot;Classic Kimchi Fried Rice&quot;,
+    &quot;time&quot;: 25
+  },
+  {
+    &quot;name&quot;: &quot;Classic Pomodoro Pasta&quot;,
+    &quot;time&quot;: 25
+  },
+  {
+    &quot;name&quot;: &quot;Classic Thai Peanut Noodles&quot;,
+    &quot;time&quot;: 30
+  },
+  {
+    &quot;name&quot;: &quot;Classic Tofu Udon Stir Fry&quot;,
+    &quot;time&quot;: 30
+  },
+  {
+    &quot;name&quot;: &quot;Green Bean Tacos&quot;,
+    &quot;time&quot;: 25
+  },
+  {
+    &quot;name&quot;: &quot;Green Berry Pancakes&quot;,
+    &quot;time&quot;: 25
+  },
+  {
+    &quot;name&quot;: &quot;Green Breakfast Oat Bowl&quot;,
+    &quot;time&quot;: 15
+  },
+  {
+    &quot;name&quot;: &quot;Green Chicken Stir Fry&quot;,
+    &quot;time&quot;: 30
+  },
+  {
+    &quot;name&quot;: &quot;Green Greek Salad Plate&quot;,
+    &quot;time&quot;: 15
+  },
+  {
+    &quot;name&quot;: &quot;Green Halloumi Burger&quot;,
+    &quot;time&quot;: 20
+  },
+  {
+    &quot;name&quot;: &quot;Green Kimchi Fried Rice&quot;,
+    &quot;time&quot;: 25
+  },
+  {
+    &quot;name&quot;: &quot;Green Pomodoro Pasta&quot;,
+    &quot;time&quot;: 25
+  },
+  {
+    &quot;name&quot;: &quot;Green Thai Peanut Noodles&quot;,
+    &quot;time&quot;: 30
+  },
+  {
+    &quot;name&quot;: &quot;Green Tofu Udon Stir Fry&quot;,
+    &quot;time&quot;: 30
+  },
+  {
+    &quot;name&quot;: &quot;Quick Bean Tacos&quot;,
+    &quot;time&quot;: 17
+  },
+  {
+    &quot;name&quot;: &quot;Quick Berry Pancakes&quot;,
+    &quot;time&quot;: 17
+  },
+  {
+    &quot;name&quot;: &quot;Quick Breakfast Oat Bowl&quot;,
+    &quot;time&quot;: 10
+  },
+  {
+    &quot;name&quot;: &quot;Quick Chicken Stir Fry&quot;,
+    &quot;time&quot;: 22
+  },
+  {
+    &quot;name&quot;: &quot;Quick Greek Salad Plate&quot;,
+    &quot;time&quot;: 12
+  },
+  {
+    &quot;name&quot;: &quot;Quick Halloumi Burger&quot;,
+    &quot;time&quot;: 12
+  },
+  {
+    &quot;name&quot;: &quot;Quick Kimchi Fried Rice&quot;,
+    &quot;time&quot;: 17
+  },
+  {
+    &quot;name&quot;: &quot;Quick Moroccan Couscous&quot;,
+    &quot;time&quot;: 27
+  },
+  {
+    &quot;name&quot;: &quot;Quick Pomodoro Pasta&quot;,
+    &quot;time&quot;: 17
+  },
+  {
+    &quot;name&quot;: &quot;Quick Ramen Comfort Bowl&quot;,
+    &quot;time&quot;: 27
+  },
+  {
+    &quot;name&quot;: &quot;Quick Teriyaki Salmon Bowl&quot;,
+    &quot;time&quot;: 27
+  },
+  {
+    &quot;name&quot;: &quot;Quick Thai Peanut Noodles&quot;,
+    &quot;time&quot;: 22
+  },
+  {
+    &quot;name&quot;: &quot;Quick Tofu Udon Stir Fry&quot;,
+    &quot;time&quot;: 22
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Breakfast Oat Bowl&quot;,
+    &quot;time&quot;: 22
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Greek Salad Plate&quot;,
+    &quot;time&quot;: 22
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Halloumi Burger&quot;,
+    &quot;time&quot;: 27
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Bean Tacos&quot;,
+    &quot;time&quot;: 25
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Berry Pancakes&quot;,
+    &quot;time&quot;: 25
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Breakfast Oat Bowl&quot;,
+    &quot;time&quot;: 15
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Chicken Stir Fry&quot;,
+    &quot;time&quot;: 30
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Greek Salad Plate&quot;,
+    &quot;time&quot;: 15
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Halloumi Burger&quot;,
+    &quot;time&quot;: 20
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Kimchi Fried Rice&quot;,
+    &quot;time&quot;: 25
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Pomodoro Pasta&quot;,
+    &quot;time&quot;: 25
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Thai Peanut Noodles&quot;,
+    &quot;time&quot;: 30
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Tofu Udon Stir Fry&quot;,
+    &quot;time&quot;: 30
+  }
+]</pre></div></div></td></tr><tr><td>dev_recipe_06</td><td>recipes_100</td><td>medium</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>26</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_recipe_06')">Details</button></td></tr><tr id='submission_json_dev_recipe_06' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Welche Rezepte haben Spice Level mindestens 3?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[
+  {
+    &quot;name&quot;: &quot;Classic Chickpea Curry&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Classic Kimchi Fried Rice&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Classic Lentil Stew&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Classic Thai Peanut Noodles&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Green Chickpea Curry&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Green Kimchi Fried Rice&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Green Lentil Stew&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Green Thai Peanut Noodles&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Quick Chickpea Curry&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Quick Kimchi Fried Rice&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Quick Lentil Stew&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Quick Thai Peanut Noodles&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Chickpea Curry&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Kimchi Fried Rice&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Lentil Stew&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Thai Peanut Noodles&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Bean Tacos&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Chicken Stir Fry&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Falafel Wrap&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Moroccan Couscous&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Paella Express&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Tofu Udon Stir Fry&quot;,
+    &quot;level&quot;: 3
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Chickpea Curry&quot;,
+    &quot;level&quot;: 4
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Kimchi Fried Rice&quot;,
+    &quot;level&quot;: 4
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Lentil Stew&quot;,
+    &quot;level&quot;: 4
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Thai Peanut Noodles&quot;,
+    &quot;level&quot;: 4
+  }
+]</pre></div></div></td></tr><tr><td>dev_recipe_07</td><td>recipes_100</td><td>medium</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>60</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_recipe_07')">Details</button></td></tr><tr id='submission_json_dev_recipe_07' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Welche Rezepte sind Easy?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[
+  {
+    &quot;name&quot;: &quot;Classic Bean Tacos&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Classic Berry Pancakes&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Classic Breakfast Oat Bowl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Classic Chicken Stir Fry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Classic Chickpea Curry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Classic Greek Salad Plate&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Classic Halloumi Burger&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Classic Kimchi Fried Rice&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Classic Lentil Stew&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Classic Pomodoro Pasta&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Classic Thai Peanut Noodles&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Classic Tofu Udon Stir Fry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Bean Tacos&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Berry Pancakes&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Breakfast Oat Bowl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Chicken Stir Fry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Chickpea Curry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Greek Salad Plate&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Halloumi Burger&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Kimchi Fried Rice&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Lentil Stew&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Pomodoro Pasta&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Thai Peanut Noodles&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Green Tofu Udon Stir Fry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Bean Tacos&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Berry Pancakes&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Breakfast Oat Bowl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Chicken Stir Fry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Chickpea Curry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Greek Salad Plate&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Halloumi Burger&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Kimchi Fried Rice&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Lentil Stew&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Pomodoro Pasta&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Thai Peanut Noodles&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Quick Tofu Udon Stir Fry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Bean Tacos&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Berry Pancakes&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Breakfast Oat Bowl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Chicken Stir Fry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Chickpea Curry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Greek Salad Plate&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Halloumi Burger&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Kimchi Fried Rice&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Lentil Stew&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Pomodoro Pasta&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Thai Peanut Noodles&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Tofu Udon Stir Fry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Bean Tacos&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Berry Pancakes&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Breakfast Oat Bowl&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Chicken Stir Fry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Chickpea Curry&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Greek Salad Plate&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Halloumi Burger&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Kimchi Fried Rice&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Lentil Stew&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Pomodoro Pasta&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Thai Peanut Noodles&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Tofu Udon Stir Fry&quot;
+  }
+]</pre></div></div></td></tr><tr><td>dev_recipe_08</td><td>recipes_100</td><td>hard</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>5</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_recipe_08')">Details</button></td></tr><tr id='submission_json_dev_recipe_08' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Wie viele Rezepte gibt es pro Diet-Typ?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[
+  {
+    &quot;dietName&quot;: &quot;High Protein&quot;,
+    &quot;count&quot;: 10
+  },
+  {
+    &quot;dietName&quot;: &quot;Omnivore&quot;,
+    &quot;count&quot;: 10
+  },
+  {
+    &quot;dietName&quot;: &quot;Pescatarian&quot;,
+    &quot;count&quot;: 10
+  },
+  {
+    &quot;dietName&quot;: &quot;Vegan&quot;,
+    &quot;count&quot;: 35
+  },
+  {
+    &quot;dietName&quot;: &quot;Vegetarian&quot;,
+    &quot;count&quot;: 35
+  }
+]</pre></div></div></td></tr><tr><td>dev_recipe_09</td><td>recipes_100</td><td>hard</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>96</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_recipe_09')">Details</button></td></tr><tr id='submission_json_dev_recipe_09' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Welche Rezepte haben mindestens sechs Zutaten?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[
+  {
+    &quot;name&quot;: &quot;Classic Bean Tacos&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Classic Berry Pancakes&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Classic Breakfast Oat Bowl&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Classic Chicken Stir Fry&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Classic Chickpea Curry&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Classic Falafel Wrap&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Classic Greek Salad Plate&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Classic Halloumi Burger&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Classic Kimchi Fried Rice&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Classic Lentil Stew&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Classic Moroccan Couscous&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Classic Paella Express&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Classic Pomodoro Pasta&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Classic Ramen Comfort Bowl&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Classic Teriyaki Salmon Bowl&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Classic Thai Peanut Noodles&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Classic Tofu Udon Stir Fry&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Classic Turkey Meatballs&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Green Roesti Bowl&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Quick Bean Tacos&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Quick Berry Pancakes&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Quick Breakfast Oat Bowl&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Quick Chicken Stir Fry&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Quick Chickpea Curry&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Quick Falafel Wrap&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Quick Greek Salad Plate&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Quick Halloumi Burger&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Quick Kimchi Fried Rice&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Quick Lentil Stew&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Quick Moroccan Couscous&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Quick Paella Express&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Quick Pomodoro Pasta&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Quick Ramen Comfort Bowl&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Quick Teriyaki Salmon Bowl&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Quick Thai Peanut Noodles&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Quick Tofu Udon Stir Fry&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Quick Turkey Meatballs&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Spicy French Mushroom Soup&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Roesti Bowl&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Thai Peanut Noodles&quot;,
+    &quot;ingredientCount&quot;: 6
+  },
+  {
+    &quot;name&quot;: &quot;Green Falafel Wrap&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Green French Mushroom Soup&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Green Greek Salad Plate&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Green Lentil Stew&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Green Paella Express&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Chicken Stir Fry&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Roasted French Mushroom Soup&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Paella Express&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Roesti Bowl&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Bean Tacos&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Berry Pancakes&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Breakfast Oat Bowl&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Chicken Stir Fry&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Chickpea Curry&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Falafel Wrap&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Greek Salad Plate&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Halloumi Burger&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Kimchi Fried Rice&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Lentil Stew&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Moroccan Couscous&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Paella Express&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Pomodoro Pasta&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Ramen Comfort Bowl&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Teriyaki Salmon Bowl&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Tofu Udon Stir Fry&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Spicy Turkey Meatballs&quot;,
+    &quot;ingredientCount&quot;: 7
+  },
+  {
+    &quot;name&quot;: &quot;Green Bean Tacos&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Green Berry Pancakes&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Green Breakfast Oat Bowl&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Green Chicken Stir Fry&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Green Chickpea Curry&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Green Halloumi Burger&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Green Kimchi Fried Rice&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Green Moroccan Couscous&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Green Pomodoro Pasta&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Green Ramen Comfort Bowl&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Green Teriyaki Salmon Bowl&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Green Thai Peanut Noodles&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Green Tofu Udon Stir Fry&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Green Turkey Meatballs&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Bean Tacos&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Berry Pancakes&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Breakfast Oat Bowl&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Chickpea Curry&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Falafel Wrap&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Greek Salad Plate&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Halloumi Burger&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Kimchi Fried Rice&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Lentil Stew&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Moroccan Couscous&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Pomodoro Pasta&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Ramen Comfort Bowl&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Teriyaki Salmon Bowl&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Thai Peanut Noodles&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Tofu Udon Stir Fry&quot;,
+    &quot;ingredientCount&quot;: 8
+  },
+  {
+    &quot;name&quot;: &quot;Roasted Turkey Meatballs&quot;,
+    &quot;ingredientCount&quot;: 8
+  }
+]</pre></div></div></td></tr><tr><td>dev_recipe_10</td><td>recipes_100</td><td>hard</td><td>❌</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>❌</td><td>16</td><td>0</td><td><button onclick="toggleDetails('submission_json_dev_recipe_10')">Details</button></td></tr><tr id='submission_json_dev_recipe_10' class='hidden details-row'><td colspan='11'><div class='details-grid'><div><h4>Frage</h4><p>Wie hoch sind die durchschnittlichen Kalorien pro Cuisine?</p></div><div><h4>Generated SPARQL</h4><pre></pre></div><div><h4>Predicted Result</h4><pre>[]</pre></div><div><h4>Gold Result</h4><pre>[
+  {
+    &quot;cuisineName&quot;: &quot;Greek&quot;,
+    &quot;avgCalories&quot;: &quot;382&quot;
+  },
+  {
+    &quot;cuisineName&quot;: &quot;Swiss&quot;,
+    &quot;avgCalories&quot;: &quot;432&quot;
+  },
+  {
+    &quot;cuisineName&quot;: &quot;Ethiopian&quot;,
+    &quot;avgCalories&quot;: &quot;462&quot;
+  },
+  {
+    &quot;cuisineName&quot;: &quot;French&quot;,
+    &quot;avgCalories&quot;: &quot;487&quot;
+  },
+  {
+    &quot;cuisineName&quot;: &quot;Mexican&quot;,
+    &quot;avgCalories&quot;: &quot;492&quot;
+  },
+  {
+    &quot;cuisineName&quot;: &quot;Moroccan&quot;,
+    &quot;avgCalories&quot;: &quot;502&quot;
+  },
+  {
+    &quot;cuisineName&quot;: &quot;Italian&quot;,
+    &quot;avgCalories&quot;: &quot;522&quot;
+  },
+  {
+    &quot;cuisineName&quot;: &quot;American&quot;,
+    &quot;avgCalories&quot;: &quot;537&quot;
+  },
+  {
+    &quot;cuisineName&quot;: &quot;Korean&quot;,
+    &quot;avgCalories&quot;: &quot;542&quot;
+  },
+  {
+    &quot;cuisineName&quot;: &quot;Middle Eastern&quot;,
+    &quot;avgCalories&quot;: &quot;562&quot;
+  },
+  {
+    &quot;cuisineName&quot;: &quot;Chinese&quot;,
+    &quot;avgCalories&quot;: &quot;582&quot;
+  },
+  {
+    &quot;cuisineName&quot;: &quot;Thai&quot;,
+    &quot;avgCalories&quot;: &quot;592&quot;
+  },
+  {
+    &quot;cuisineName&quot;: &quot;Japanese&quot;,
+    &quot;avgCalories&quot;: &quot;595.3333333333333333333333333&quot;
+  },
+  {
+    &quot;cuisineName&quot;: &quot;Indian&quot;,
+    &quot;avgCalories&quot;: &quot;612&quot;
+  },
+  {
+    &quot;cuisineName&quot;: &quot;British&quot;,
+    &quot;avgCalories&quot;: &quot;652&quot;
+  },
+  {
+    &quot;cuisineName&quot;: &quot;Spanish&quot;,
+    &quot;avgCalories&quot;: &quot;672&quot;
+  }
+]</pre></div></div></td></tr></tbody></table></section>
+
+</body>
+</html>
